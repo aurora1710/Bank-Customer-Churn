@@ -1,8 +1,8 @@
 import streamlit as st
 import pandas as pd
 import pickle
-#from sklearn.preprocessing import StandardScaler 
-from sklearn.preprocessing import StandardScaler as scaler
+from sklearn.preprocessing import StandardScaler 
+#from sklearn.preprocessing import StandardScaler as scaler
 
 # Load the trained model and scaler
 with open('logistic_regression_model.pkl', 'rb') as f:
@@ -63,8 +63,9 @@ user_input_df = user_input_df[train_cols]
 
 
 # Scale the user input
-user_input_scaled = scaler.transform(user_input_df)
-
+#user_input_scaled = scaler.transform(user_input_df)
+user_input_scaled = StandardScaler.transform(user_input_df)
+StandardScaler
 # Make prediction
 prediction = model.predict(user_input_scaled)
 prediction_proba = model.predict_proba(user_input_scaled)
