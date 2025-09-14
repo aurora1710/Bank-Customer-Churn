@@ -64,7 +64,7 @@ user_input_df = user_input_df[train_cols]
 # Scale the user input
 user_input_scaled = scaler.transform(user_input_df)
 
-StandardScaler
+#StandardScaler
 # Make prediction
 prediction = model.predict(user_input_scaled)
 prediction_proba = model.predict_proba(user_input_scaled)
